@@ -5,14 +5,18 @@
 2. Favor Composition over Inheritance
 
 ### SOLID Design Principles
-1. **S**ingle Responsibility : Class should have one and only one reason to change.
-   Consider Payroll Application, In Employee class with
-    1) calculatePay
-    2) generateReport
-    3) SaveOrUpdateEmployee methods
+1. **S**ingle Responsibility : **Class should have one and only one reason to change.**
+
+   Consider Payroll Application, this application have class **Employee**  with
+    1) **calculatePay**
+    2) **generateReport**
+    3) **SaveOrUpdateEmployee methods**
+    
     break Single Responsibility principles, Employee class can modify or change by multiple Reason like change in Pay, Change       Report Generation view, Change in DB , so Instead of One Employee class we may have three class for individual                 responsibility like EmployeeWageCalculator, EmployeeReportGenerator and EmployeeDAO
     
-    Same Principle also applied with method, Method should have one and only one reason to change.
+    Same Principle also applied with method, **Method should have one and only one reason to change.**
+    
+    Another Example: OTPHandler class with three method -> generateOTP, saveOTP, sendNotification
     
 2. **O**pen/Close Princile : Class should be open for extension, but close for modification.
 3. **L**iskov Subsitution Principle : Let q(x) be a property provable about object x of type T. Then q(y) should be provable about object y of type S. where S is subtype of T.
