@@ -29,8 +29,36 @@
    Another Example is **RestTemplate** of Spring support default HTTPMessageConverterts like json, xml, bytearray and others.
    Rest Template also extendable for support other converters like Google Protpbuff Http Converter.
    
-3. **L**iskov Subsitution Principle : Let q(x) be a property provable about object x of type T. Then q(y) should be provable about object y of type S. where S is subtype of T.
-  Subclass behave in a such way that it will not cause any problem when it use instead of SuperClass.
+3. **L**iskov Subsitution Principle :Derived classes must be substitutable for their base classes.
+   
+   Subclass behave in a such way that it will not cause any problem when it use instead of SuperClass.
+   
+   For example, Square is a Recatancle, But if extend Rectangle in Square class then Square has two method setWidth
+   setHeight. Consider Scanrio, where one use Rectangle reference and Square Object, on invoking setWidth method Height 
+   also be changed because of Square object. But invoker want to set only width of Rectangle. For resolve this kind of 
+   issue we can caheck **instance of**  check using if condition which again break Open/Close Condition. So in above
+   scanario, No Relation required between Square and Rectangle.
+   
+   Another example of Toy Duck should not derived from Duck, It look like Duck, Quack like Duck but requires battery.
+   
+   
 4. **I**nterface Segregation Principle : Client should not be forced to depend upon interface that they don't use.
-5. **D**ependency Inversion Principle : High level module should not depend on low level module. Both should depend upon abstraction. Abstraction should not depend upon detail, Detail should depend upon abstraction.
+   
+   The Interface Segregation Principle states that clients should not be forced to implement interfaces they don't use. 
+   Instead of one fat interface, many small interfaces are preferred based on groups of methods, 
+   each one serving one submodule.
+   
+   For Example, we have one Web Service interface which publish all web service for Provision,
+   Login, Notification, Monitor, Audit web service. So if any channge occurs in Provision web service
+   the the client which not use this web service also may changed. So Instead of one Fat interface we can
+   create separate group interface of web service for Login, Provision, Notification. Monitor and Audit web
+   service.
+5. **D**ependency Inversion Principle : High level module should not depend on low level module. Both should depend upon  
+   abstraction. Abstraction should not depend upon detail, Detail should depend upon abstraction.
+   
+   Generally, High Level modules deped upon low level module. For Example our code start with High level Controller to
+   Service to DAO to JDBC Code(low level). Any changes in low level affect to High level. But If we created one 
+   interface between High level and Low level then High level and low level both depend on abstration. So Any change
+   to low level not affect to high level. Thats the reason it called Dependency Inversion Principle.
+
   
