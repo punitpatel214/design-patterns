@@ -39,7 +39,8 @@
    issue we can caheck **instance of**  check using if condition which again break Open/Close Condition. So in above
    scanario, No Relation required between Square and Rectangle.
    
-   Another example of Toy Duck should not derived from Duck, It look like Duck, Quack like Duck but requires battery.
+   Another example of Cat should not derived from pet animal, some cats(wild cat) are not pet animal. 
+   Toy Duck should not derived from Duck, It look like Duck, Quack like Duck but requires battery.
    
    
 4. **I**nterface Segregation Principle : Client should not be forced to depend upon interface that they don't use.
